@@ -9,11 +9,11 @@ var keys = require("./key.js");
 
 // var spotify = new Spotify(keys.spotify);
 
-var artist = "Motley Crue";
+var artist = "slayer";
 
 axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(
   function(response) {
-    console.log(JSON.stringify(result));
+    console.log(response.data[0].venue.name);
   }
 );
 
