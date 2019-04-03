@@ -48,9 +48,11 @@ var userInput = process.argv.slice(3).join(" ");
         function bandsInTown(bands){
             axios.get("https://rest.bandsintown.com/artists/" + bands + "/events?app_id=codingbootcamp").then(
                 function(response) {
-                    console.log("\nName of the venue: " + response.data[0].venue.name);
-                    console.log("Venue location: " + response.data[0].venue.city);
-                    console.log("Date of the event: " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\n");
+                    for (i = 0; i < 4; i++) {
+                    console.log("\nName of the venue: " + response.data[i].venue.name);
+                    console.log("Venue location: " + response.data[i].venue.city);
+                    console.log("Date of the event: " + moment(response.data[i].datetime).format("MM-DD-YYYY") + "\n");
+                    }
                 }
             );
         };
